@@ -1,0 +1,19 @@
+form > .ng-invalid{
+    border:red 1px solid;
+}
+form > .ng-valid{
+    border:green 1px solid;
+}
+form > .ng-touched{
+    background-color:lavenderblush;
+}
+form > input ,select , form > p{
+    margin-left: 42%;
+    margin-bottom: 10px;
+    width: 30vh;
+    height: 5vh;
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+}

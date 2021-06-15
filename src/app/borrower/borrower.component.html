@@ -1,0 +1,12 @@
+<h1>BORROWERS:</h1>
+<div class='borrowerDiv'*ngFor="let borrower of borrowerList">
+    <div>id:{{borrower.id}}<br> tz:{{borrower.tz}}<br> name:{{borrower.firstName}} {{borrower.lastName | my}}<br></div>
+    <div *ngIf=borrower.mail>
+        <a href  = "mailto:{{borrower.maile}}?subject=hellow dear:{{borrower.firstName}}&body=Hi">send feedback</a><br>
+    </div>
+    <div *ngIf=!borrower.mail>
+        <span *ngIf=borrower.phon>phon:{{borrower.phon}}</span>
+    </div>
+    <div>_______________________________________________</div>
+</div>
+

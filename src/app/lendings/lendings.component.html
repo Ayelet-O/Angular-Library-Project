@@ -1,0 +1,10 @@
+<div *ngFor="let lend of lendingsList; index as i">
+    <p [ngClass]="{'missingDate':missingDate(i),'hasDate':!missingDate(i)}">
+        lending id:{{lend.id}} 
+        borrower id:{{lend.borrowerId}} 
+        book id:{{lend.bookId}} 
+        name:{{lend.borrowerLastName}} {{lend.borrowerFirstName}} 
+        borrowing date:{{lend.landingDate | date :'yyy EEEE d LLL'}} 
+        returning date:{{lend.returnDate | date :'yyy EEEE d LLL'}}</p>
+        <p *ngIf="returnedBook(lend)">return the book in the early opportunity!!</p>
+</div>

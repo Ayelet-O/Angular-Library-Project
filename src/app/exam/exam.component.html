@@ -1,0 +1,9 @@
+<h1>the exam of:{{myName}}</h1>
+<div>{{instroction}}</div>
+<div>your mark is:{{10*mark}}</div>
+<input type="text" placeholder="enter your name" [(ngModel)]="myName"/>
+<div></div>
+<button (click)="passingMark()">to see if you passed, click here</button>
+<p *ngFor="let q of questions;index as i">question number {{i+1}}:  {{q}}</p>
+<div *ngIf="isActive()">enter your name</div>
+<p *ngIf="massege()">{{myMark}}</p>

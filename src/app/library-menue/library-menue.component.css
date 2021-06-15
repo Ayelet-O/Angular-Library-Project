@@ -1,0 +1,12 @@
+.headLine{
+    font-size: 70px;
+    text-align: center;
+}
+.router{
+    margin-left: 25px;
+    font-size: 30px;
+    text-decoration: none;
+}
+#firstRouter{
+    margin-left: 25%;
+}

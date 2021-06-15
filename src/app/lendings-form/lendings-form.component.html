@@ -1,0 +1,34 @@
+<h1>Adding Lending Book:</h1>
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+    <input type="text" name="id" [(ngModel)]="b.id" required placeholder="enter lendings id" #id="ngModel"/><br>
+    <p *ngIf="!id.valid">the id is required</p>
+
+    <select name="borrowerId" [(ngModel)]="b.borrowerId" #borrowerId="ngModel" (change)="fillNamesSelectBorrower()">
+        choose borrower id:<option *ngFor="let b of borowerList" [value]="b.tz">{{b.tz}}</option>
+    </select><br>
+    <p *ngIf="!borrowerId.valid">the borrower id is required</p>
+
+    <input type="text" name="borrowerFirstName" [(ngModel)]="b.borrowerFirstName" required placeholder="enter borrower First Name" #borrowerFirstName="ngModel"/><br>
+    <p *ngIf="!borrowerLastName.valid">the borrower first name is required</p>
+
+    <input type="text" name="borrowerLastName" [(ngModel)]="b.borrowerLastName" required placeholder="enter borrower Last Name" #borrowerLastName="ngModel"/><br>
+    <p *ngIf="!borrowerLastName.valid">the borrower Last Name is required</p>
+
+    <select name="bookId" [(ngModel)]="b.bookId" #bookId="ngModel" (change)="fillNameSelect()">
+        choose book id:<option *ngFor="let b of bookList" [value]="b.id">{{b.id}}</option>
+    </select><br>
+    <p *ngIf="!bookId.valid">the book Id is required</p>
+
+    <select name="bookTitle" [(ngModel)]="b.bookTitle" #bookTitle="ngModel"(change)="fillIdSelect()">
+        choose book name/title:<option *ngFor="let b of bookList" [value]="b.title">{{b.title}}</option>
+    </select><br>
+    <p *ngIf="!bookTitle.valid">the book Title is required</p>
+
+    <input type="date" name="landingDate" [(ngModel)]="b.landingDate" required placeholder="enter landing Date"#landingDate="ngModel"/><br>
+    <p *ngIf="!landingDate.valid">the book landing Date is required</p>
+
+    <input type="date" name="returnDate" [(ngModel)]="b.returnDate" required placeholder="enter return Date"#returnDate="ngModel"/><br>
+    <p *ngIf="!returnDate.valid">the book return Date is required</p>
+    
+    <input type="submit" [disabled]="!bookForm.valid"/>
+</form>

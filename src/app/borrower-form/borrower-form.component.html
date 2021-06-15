@@ -1,0 +1,25 @@
+<h1>Adding Borrower</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+<input type="text" formControlName="tz" placeholder="enter tz"[style.borderColor]="myForm.controls.tz.touched && myForm.controls.tz.invalid?'red':'green'"/><br>
+<p *ngIf='myForm.controls.tz.invalid && myForm.controls.tz.dirty'>9 numbers are required!</p>
+<input type="text" formControlName="firstName" placeholder="enter first name"[style.borderColor]="myForm.controls.firstName.touched && myForm.controls.firstName.invalid?'red':'green'"/><br>
+<p *ngIf='myForm.controls.firstName.invalid && myForm.controls.firstName.dirty'>the name need to contain at least 2 characters!</p>
+<input type="text" formControlName="lastName" placeholder="enter last name"[style.borderColor]="myForm.controls.lastName.touched && myForm.controls.lastName.invalid?'red':'green'"/><br>
+<p *ngIf='myForm.controls.lastName.invalid && myForm.controls.lastName.dirty'>the name need to contain at least 2 characters!</p>
+<input type="text" formControlName="phon" placeholder="enter phon number"[style.borderColor]="myForm.controls.phon.touched && myForm.controls.phon.invalid?'red':'green'"/><br>
+<p *ngIf='myForm.controls.phon.invalid && myForm.controls.phon.dirty'>the number need to start with '052' or '053' and contain 10 numbers!</p>
+<input type="email" formControlName="email" placeholder="enter email"[style.borderColor]="myForm.controls.email.touched && myForm.controls.email.invalid?'red':'green'"/><br>
+<p *ngIf='myForm.controls.email.invalid && myForm.controls.email.dirty'>the email need to contain the pattern: '@gmail.com!</p>
+<!-- pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ -->
+<select formControlName="ageCategory"[style.borderColor]="myForm.controls.ageCategory.touched && myForm.controls.ageCategory.invalid?'red':'green'">
+    enter age category:<option *ngFor="let c of categoryList"[style.backgroundColor]="c.color" [value]="c.id">{{c.name}}</option>
+</select><br>
+<p *ngIf='myForm.controls.ageCategory.invalid && myForm.controls.ageCategory.touched'>this field is required!</p>
+<input type="submit" [disabled]="!myForm.valid" value="submit"/><br>
+<input type="button" value="Reset" (click)='reset()'/>
+</form>
+<!-- {{myForm.value | json}} -->
+
+<!-- input.oninvalid = function(event) {
+    event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+} -->

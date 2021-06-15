@@ -1,0 +1,10 @@
+h1 , h3{
+    display: inline-block;
+}
+h1{
+    margin-left: 40%;
+}
+div{
+    font-size: 45px;
+    text-align: center;
+}

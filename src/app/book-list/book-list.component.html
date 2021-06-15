@@ -1,0 +1,19 @@
+<app-category></app-category>
+<h1>the list of the books in the library</h1>
+<div *ngFor="let BookList of bookDetailsList; index as i">
+    <!-- bookDetailesById(BookList.id) -->
+    <p routerLink='bookDetailes/{{BookList.id}}' [class.missingDetails]="ismissing(i) " >id:{{BookList.id}} |
+        title:{{BookList.title | titlecase}} | author's name:{{BookList.author}} </p>
+</div>
+<div *ngIf='bookDetailsList.length==0'>
+    <p>there is'nt books in the library</p>
+</div>
+<div *ngIf='bookDetailsList.length!=0'>
+    <p>there is {{numOfBooks}} books in the library</p>
+</div>
+<h1>the list according to the request</h1>
+<input id='search'type="search" (blur)="massege()" placeholder="enter the name of the book" [(ngModel)]="bookName" />
+<div *ngFor="let book of bookDetailsList | filter:bookName">
+    <p>id:{{book.id}} | title:{{book.title}} | author's name:{{book.author}} </p>
+</div>
+<router-outlet></router-outlet>

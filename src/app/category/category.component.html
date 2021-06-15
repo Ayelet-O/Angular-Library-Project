@@ -1,0 +1,5 @@
+<div class='categoryStyle' *ngFor="let category of categoryList" [style.backgroundColor]="category.color" [title]=category.description routerLink='category/{{category.id}}'>
+    <span>{{category.name}}</span>
+</div> 
+<!-- <router-outlet></router-outlet> -->
+<!-- routerLink='bookDetailes/{{BookList.id}}' -->

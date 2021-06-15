@@ -1,0 +1,11 @@
+<div id="mainDiv">
+    <h2>book's name:{{book.title}}</h2>
+    <p>author:{{book.author}}</p>
+    <p>summary of the book:{{book.summary}}</p>
+    <div *ngIf='book.pageCount>400'>
+        <p>the book is extremly thick</p>
+    </div>
+    <div *ngIf='book.pageCount<50&&book.categoryId!=1'>
+        <p>the book is extremly thin</p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<h1>Adding Book:</h1>
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+    <input type="text" name="id" [(ngModel)]="b.id" required placeholder="enter book id" #id="ngModel"/><br>
+    <p *ngIf="!id.valid">the id is required</p>
+    <input type="text" name="name" [(ngModel)]="b.title" required placeholder="enter book name" #name="ngModel"/><br>
+    <p *ngIf="!name.valid">the name is required</p>
+
+    <input type="text" name="author" [(ngModel)]="b.author" required placeholder="enter book author"#author="ngModel"/><br>
+    <p *ngIf="!author.valid">the author is required</p>
+
+    <select name="categoryId" [(ngModel)]="b.categoryId" #categoryId="ngModel">
+        enter age category:<option *ngFor="let c of categoryList"[style.backgroundColor]="c.color" [value]="c.id">{{c.name}}</option>
+    </select><br>
+    <p *ngIf="!categoryId.valid">the categoryId is required</p>
+
+    <input type="number" name="pageCount" [(ngModel)]="b.pageCount" required placeholder="enter book number of pages"#pageCount="ngModel"/><br>
+    <p *ngIf="!pageCount.valid">the pageCount is required</p>
+    <!-- <p *ngIf="check()">the pageCount must contain more than 10 pages!</p> -->
+
+    <input type="text" name="summary" [(ngModel)]="b.summary" required placeholder="enter book summary"#summary="ngModel"/><br>
+    <p *ngIf="!summary.valid">the summary is required</p>
+    <p *ngIf="!bookForm.valid">the form is invalid</p>
+    <input type="submit" [disabled]="!bookForm.valid"/>
+</form>

@@ -1,0 +1,13 @@
+.touchedAndWrong{
+    border:red 1px solid;
+}
+form > input,select{
+    margin-left: 42%;
+    margin-bottom: 10px;
+    width: 30vh;
+    height: 5vh;
+    font-size: 20px;
+}
+h1,p{
+    text-align: center;
+}
